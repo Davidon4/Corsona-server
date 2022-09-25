@@ -59,6 +59,8 @@ const productSchema = mongoose.Schema({
   },
 });
 
+/* This is a virtual property that is not stored in the database. It is used to return the id of the
+product in the response. */
 productSchema.virtual("id").get(function () {
   return this._id.toHexString();
 });
